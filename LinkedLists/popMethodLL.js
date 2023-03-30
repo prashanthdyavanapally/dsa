@@ -40,7 +40,6 @@ class LinkedList {
     if (this.length == 0) {
       this.head = null;
       this.tail = null;
-      //   console.log("LL is empty");
     }
     return temp;
   }

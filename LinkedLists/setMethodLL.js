@@ -28,7 +28,7 @@ class LinkedList {
 
   unshift(value) {
     const newNode = new Node(value);
-    if (!this.head) {
+    if (this.head == null) {
       this.head = newNode;
       this.tail = newNode;
     } else {
@@ -47,12 +47,23 @@ class LinkedList {
     }
     return temp;
   }
+
+  set(index, value) {
+    let temp = this.get(1);
+    if (temp) {
+      temp.value = value;
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
-let myLinkedList = new LinkedList(6);
-myLinkedList.push(7);
-myLinkedList.push(8);
-myLinkedList.unshift(5);
-myLinkedList.unshift(4);
+let myLinkedList = new LinkedList(4);
+myLinkedList.push(5);
+myLinkedList.push(6);
+myLinkedList.unshift(3);
+myLinkedList.unshift(2);
 // myLinkedList.get(2);
-console.log("myLinkedList:", myLinkedList.get(3));
+myLinkedList.set(1, 8);
+console.log("myLinkedList:", myLinkedList);
